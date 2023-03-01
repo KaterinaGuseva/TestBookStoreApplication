@@ -1,12 +1,15 @@
 import configurations.ConfigurationConstants;
 import configurations.TestConfiguration;
 import io.restassured.RestAssured;
+import logger.MyLogger;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.BeforeMethod;
 import utils.apiutils.Specifications;
 import webdriver.CreateWebDriver;
+
+import java.time.Duration;
 
 public abstract class BaseTest {
 
@@ -26,7 +29,10 @@ public abstract class BaseTest {
     
     @BeforeMethod
     public void setUp() {
+        MyLogger.getMyLogger().info( "Create Driver");
         driver = CreateWebDriver.getDriver(getTestConfig(ConfigurationConstants.KEY_BROWSER));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        MyLogger.getMyLogger().info( "Open Main Page");
         driver.get(getTestData(ConfigurationConstants.KEY_URL));
     }
 
@@ -38,6 +44,7 @@ public abstract class BaseTest {
     
     @AfterMethod
     public void tearDown() {
+        MyLogger.getMyLogger().info( "Close Driver");
         CreateWebDriver.quitDriver();
     }
 }

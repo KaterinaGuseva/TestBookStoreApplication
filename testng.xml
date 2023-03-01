@@ -5,8 +5,8 @@
         <classes>
             <class name="BookStoreTest">
                 <methods>
-                    <include name="testCase1"/>
-                    <include name="testCase2"/>
+                    <include name="checkUiUserSingInCorrectData"/>
+                    <include name="checkApiUiBookTitles"/>
                 </methods>
             </class>
         </classes>        

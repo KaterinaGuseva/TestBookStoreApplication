@@ -1,5 +1,6 @@
 package pages;
 
+import logger.MyLogger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -15,15 +16,18 @@ public class LoginPage extends BasePage {
     }
     
     public void sendUserName(String userName) {
+        MyLogger.getMyLogger().info( "Enter the username to login");
         driver.findElement(By.xpath(TXB_USER_NAME)).sendKeys(userName);
     }
 
     public void sendUserPassword(String userPassword) {
+        MyLogger.getMyLogger().info( "Enter the user password to login");
         driver.findElement(By.xpath(TXB_USER_PASSWORD)).sendKeys(userPassword);
     }
 
     public void clickOnBtnLogin() {
           scrollElementIntoView(SCROLL_TO_BNT_LOGIN);
+          MyLogger.getMyLogger().info( "Click Button Login");
           driver.findElement(By.xpath(BTN_LOGIN)).click();
     }
 }

@@ -1,6 +1,8 @@
 {
   "base_url": "https://demoqa.com/books",
   "base_api_url": "https://demoqa.com",
-  "user_name": "Ekaterina",
-  "user_password": "Ekaterina123456!"
+  "user_sign_up_name": "Ekaterina",
+  "user_sign_up_password": "Abc123456789!",
+  "user_sign_in_name": "Ekaterina",
+  "user_sign_in_password": "Abc123456789!"
 }
